@@ -1,0 +1,32 @@
+{
+  "name": "use-not",
+  "version": "0.1.1",
+  "description": "A simple Hook for notting a value.",
+  "main": "dist/use-not.js",
+  "umd:main": "dist/use-not.umd.js",
+  "module": "dist/use-not.m.js",
+  "source": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "microbundle -o dist/ --sourcemap false --compress false",
+    "dev": "microbundle watch -o dist/ --sourcemap false --compress false"
+  },
+  "keywords": [
+    "react-hooks",
+    "hooks",
+    "react",
+    "utils"
+  ],
+  "author": "donavon",
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-config-amex": "^9.0.0",
+    "microbundle": "^0.8.3",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2"
+  },
+  "peerDependencies": {
+    "react": "^16.7.0-alpha.0"
+  }
+}
