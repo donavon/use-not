@@ -1,5 +1,7 @@
 # use-not
 
+[![npm version](https://badge.fury.io/js/use-not.svg)](https://badge.fury.io/js/use-not)
+
 A custom Hook that implements a simple NOT (or toggle) of a Boolean value.
 
 Instead of keeping state yourself, and toggling the current state before calling the setter,
@@ -19,44 +21,54 @@ npm i use-not
 ## Usage
 
 ```js
-const [value, not] = useNot(initialValue);
+const [value, notValue] = useNot(initialValue);
 ```
 
 Where:
 
 **value** (a Boolean) is the current value.
 
-**not** is a function that you can call to NOT the value.
-i.e. change from `true` to `false` and vise versa.
+**notValue** is a function that you can call to NOT the value.
+i.e. change from it `true` to `false` and vise versa.
 
 
 ## Example
 
-Here is a simple App that toggles a value.
+Here is a simple App that toggles a value to produce either a blue or a red square.
 
 ```jsx
 function App() {
   const [value, setValue] = useState(false);
   return (
-    <a onClick={() => setValue(current => !current)}>
-      <div style={{ backgroundColor: value ? 'red' : 'blue' }} />
-    </a>
+    <div
+      onClick={() => setValue(current => !current)}
+      style={{
+        width: 100,
+        height: 100,
+        backgroundColor: value ? 'red' : 'blue'
+      }}
+    />
   );
 }
 ```
 
-Note that in the `onClick` handler, we have a lambda function that takes the current
-value and returns the notted value.
+Note that in the `onClick` handler, we have a lambda function that will take the current
+value, NOT it, and returns the new value.
 
 Below is the same App. This time using `useNot`.
 
 ```jsx
 function App() {
-  const [value, not] = useToggle(false);
+  const [value, notValue] = useToggle(false);
   return (
-    <a onClick={not}>
-      <div style={{ backgroundColor: value ? 'red' : 'blue' }} />
-    </a>
+    <div
+      onClick={notValue}
+      style={{
+        width: 100,
+        height: 100,
+        backgroundColor: value ? 'red' : 'blue'
+      }}
+    />
   );
 }
 ```
@@ -65,12 +77,17 @@ Notice that the lambda function is replaced simply with a call to `not`.
 
 Again. Before:
 ```jsx
-<a onClick={() => setValue(current => !current)}>
+onClick={() => setValue(current => !current)}
 ```
 After:
 ```jsx
-<a onClick={not}>
+onClick={notValue}
 ```
+
+Is this rocket science? No. However, if you find yourself doing this multiple times,
+or even once, it's a nice abstraction to help declutter your code.
+
+## Live demo
 
 You can see the above demo [running live](https://codesandbox.io/s/j1nplwxx49) on CodeSandbox.
 
