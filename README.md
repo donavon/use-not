@@ -10,7 +10,7 @@ function directly without requiring the assistance of a lambda function.
 
 ## Requirement ⚠️
 
-To use `useNot`, you must use at minimum `react@16.7.0-alpha.0`. React Hooks is currently at **[RFC](https://github.com/reactjs/rfcs/pull/68)** stage.
+To use `useNot`, you must use at minimum `react@16.8.0`.
 
 ## Installation
 
