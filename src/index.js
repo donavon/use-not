@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 const useNot = (initialValue) => {
   const [value, setValue] = useState(!!initialValue);
   return [
     value,
-    () => setValue(currentValue => !currentValue),
+    useCallback(() => {
+      setValue(currentValue => !currentValue);
+    }, [setValue]),
   ];
 };
 

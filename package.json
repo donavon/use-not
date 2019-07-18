@@ -23,9 +23,9 @@
   "devDependencies": {
     "eslint": "^5.10.0",
     "eslint-config-amex": "^9.0.0",
-    "microbundle": "^0.8.3",
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2"
+    "microbundle": "^0.11.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "peerDependencies": {
     "react": "^16.7.0-alpha.0"
