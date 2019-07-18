@@ -1,6 +1,6 @@
 {
   "name": "use-not",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A simple React Hook to NOT a value.",
   "main": "dist/use-not.js",
   "umd:main": "dist/use-not.umd.js",
